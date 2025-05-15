@@ -1,0 +1,35 @@
+# 🕷 XMR Stealth Miner Payload
+
+A lightweight, stealthy proof-of-concept **XMR miner payload** designed for educational purposes only.  
+This tool demonstrates how to deploy and run `XMRig` silently on a target system, mining Monero to a specified pool and wallet using command line arguments.
+
+---
+
+## 🚨 Disclaimer
+> **This project is strictly for ethical testing, research, and educational use in controlled environments.**
+>
+> Any misuse, deployment on unauthorized systems, or usage violating local laws and regulations is strictly prohibited.
+>  
+> Use responsibly. Author is not responsible for any damages or liabilities.
+
+---
+
+## ⚙ Features
+
+- ✅ Stealthy runtime without GUI or console window.
+- ✅ Uses only command line arguments (no config file required).
+- ✅ Auto-extracts `XMRig` to `System32` or custom hidden directory.
+- ✅ Adds itself to Windows startup for persistence.
+- ✅ Includes a basic watchdog to ensure miner keeps running.
+- ✅ Low CPU usage by default to avoid user suspicion.
+
+---
+
+## 💡 Usage
+
+1. **Edit the script:**
+   - Set your mining pool and wallet address inside the `xmrig_args` array in the script.
+
+2. **Build the payload:**
+   ```bash
+   pyinstaller --onefile --add-data "xmrig.exe;." miner_payload.py
